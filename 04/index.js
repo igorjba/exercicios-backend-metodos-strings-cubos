@@ -2,10 +2,8 @@ let identificador = "123";
 let nome = "José silva costa";
 let email = "      jose@email.com  ";
 
-if (identificador.length < 6) {
-    identificador = identificador.padStart(6, 0);
+identificador = identificador.padStart(6, "0");
 
-}
 console.log(identificador);
 
 const arrayDeNomes = nome.split(" ");
