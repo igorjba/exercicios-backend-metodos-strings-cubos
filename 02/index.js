@@ -19,5 +19,27 @@ if (cnpj.length === 14) {
     cnpjTermo5 = cnpj.slice(12, 14);
     console.log(`${cnpjTermo1}.${cnpjTermo2}.${cnpjTermo3}/${cnpjTermo4}-${cnpjTermo5}`);
 } else {
-    console.log("CNPJ Inválido");
+    console.log("CPF Inválido");
 }
+
+const validarCpf = (cpf) => {
+    if (cpf.length !== 11) {
+        console.log("CPF Inválido");
+    } else {
+        const cpfFormatado = `${cpf.slice(0, 3)}.${cpf.slice(3, 6)}.${cpf.slice(6, 9)}-${cpf.slice(9)}`;
+        console.log(cpfFormatado);
+    }
+}
+
+validarCpf(cpf);
+
+const validarCnpj = (cnpj) => {
+    if (cnpj.length !== 14) {
+        console.log("CPF Inválido");
+    } else {
+        const cnpjFormatado = `${cnpj.slice(0, 2)}.${cnpj.slice(2, 5)}.${cnpj.slice(5, 8)}/${cnpj.slice(8, 12)}-${cnpj.slice(12, 24)}`;
+        console.log(cnpjFormatado);
+    }
+}
+
+validarCnpj(cnpj);
