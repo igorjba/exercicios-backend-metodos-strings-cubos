@@ -1,9 +1,19 @@
 const texto = "Aprenda programar do zero na Cubos Academy";
 
-function replaceAll(original, text, newText) {
-    while ((original !== original.replace(text, newText))) {
-        original = original.replace(text, newText);
+const transformarTextoEmUrl = (texto) => {
+    let url = "";
+
+    const arrayPalavras = texto.split(" ");
+
+
+    for (let i = 0; i < arrayPalavras.length; i++) {
+        if (i > 0) {
+            url += `-${arrayPalavras[i]}`;
+        } else {
+            url += `${arrayPalavras[i]}`;
+        }
+
     }
-    return original;
+    console.log(url.toLowerCase());
 }
-console.log(replaceAll(texto, " ", "-"));
+transformarTextoEmUrl(texto);
