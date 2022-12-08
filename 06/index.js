@@ -1,35 +1,27 @@
-const celular = "97188880";
-const celular2 = "71999231564"
+const celular = "171999918888";
 
+const formatarCelular = (numero) => {
 
-function formatarNumeroCelular(telefone) {
-    if (telefone.length == 11) {
+    let celularFormatado;
 
-        let = termo1Tel = telefone.slice(0, 2);
-        let = termo2Tel = telefone.slice(2, 3);
-        let = termo3Tel = telefone.slice(3, 7);
-        let = termo4Tel = telefone.slice(7);
+    if (numero.length == 8) {
 
-        telefone = `(${termo1Tel}) ${termo2Tel} ${termo3Tel}-${termo4Tel}`;
+        celularFormatado = `9 ${numero.slice(0, 4)}-${numero.slice(4)}`;
+        console.log(celularFormatado);
+    } else if (numero.length === 9) {
+        celularFormatado = `${numero.slice(0, 1)} ${numero.slice(1, 5)}-${numero.slice(5)}`;
+        console.log(celularFormatado);
 
-        return console.log(telefone);
-
+    } else if (numero.length === 10) {
+        celularFormatado = `(${numero.slice(0, 2)}) 9 ${numero.slice(2, 6)}-${numero.slice(6)}`;
+        console.log(celularFormatado);
+    } else if (numero.length === 11) {
+        celularFormatado = `(${numero.slice(0, 2)}) ${numero.slice(2, 3)} ${numero.slice(3, 7)}-${numero.slice(7)}`;
+        console.log(celularFormatado);
     } else {
-
-        if (telefone.length == 8) {
-
-            let = termo1Tel = telefone.slice(0, 4);
-            let = termo2Tel = telefone.slice(4);
-
-            telefone = `9 ` + termo1Tel + "-" + termo2Tel;
-
-            return console.log(telefone);
-
-        }
+        console.log("número inválido");
     }
 }
 
-//telefone será substituido por qualquer valor ou variavel
-//formatarNumeroCelular("713216547");
-formatarNumeroCelular(celular);
-formatarNumeroCelular(celular2);
+formatarCelular(celular);
+
