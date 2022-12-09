@@ -1,47 +1,41 @@
 const nome = 'Guido';
 
-function retirarEspacos(nomeOriginal) {
-    if (nomeOriginal.includes(" ")) {
-        while (nomeOriginal !== nomeOriginal.replace(" ", "")) {
-            nomeOriginal = nomeOriginal.replace(" ", "")
-            nomeTudoJunto = nomeOriginal;
-        }
-    } else {
-        nomeTudoJunto = nomeOriginal;
-    }
-
-}
-
-let nomeTudoJunto
-
 function criarNick(nomeOriginal) {
 
-    if (nomeOriginal.length > 0) {
+    function retirarEspacos(nomeOriginal) {
+        const nomeJuntoMinusculo = nomeOriginal.trim().toLowerCase();
+        if (nomeOriginal.includes(" ")) {
+            while (nomeJuntoMinusculo !== nomeJuntoMinusculo.replace(" ", "")) {
+                nomeJuntoMinusculo = nomeJuntoMinusculo.replace(" ", "")
+                nomeTudoJunto = nomeJuntoMinusculo;
+            }
+        } else {
+            nomeTudoJunto = nomeJuntoMinusculo;
+        }
+    }
 
-        let nomeJuntoMinusculo = nomeTudoJunto.toLowerCase();
+    let nomeTudoJunto
 
-        if (nomeJuntoMinusculo.length < 12) {
+    retirarEspacos(nomeOriginal)
 
-            let nomeJuntoMinusculo12Carac = nomeJuntoMinusculo.padEnd(12, (Math.floor(Math.random() * 10)));
+    if (nomeOriginal.length > 0 && nomeOriginal.length <= 13) {
+
+        if (nomeTudoJunto.length < 12) {
+
+            let nomeJuntoMinusculo12Carac = nomeTudoJunto.padEnd(12, (Math.floor(Math.random() * 10)));
 
             return console.log(`@${nomeJuntoMinusculo12Carac}`);
 
         } else {
 
-            nomeJuntoMinusculo = nomeJuntoMinusculo.slice(0, 12);
-
-            return console.log(`@${nomeJuntoMinusculo}`);
+            return console.log(`@${nomeTudoJunto}`);
         }
-
-
 
     } else {
 
         return console.log("Nome Inválido");
 
     }
-
 }
-retirarEspacos(nome)
 criarNick(nome);
 
