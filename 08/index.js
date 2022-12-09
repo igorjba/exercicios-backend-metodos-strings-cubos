@@ -1,16 +1,9 @@
-const cpf = "011.022.03344";
+const cpf = "011022.03344";
 
-function removerPontuacaoCpfCnpj(original, text, newText) {
-    while (original !== original.replace(".", "")) { //while = enquanto
-        original = original.replace(".", "");
+const removerPontuacao = (numero) => {
+    while (numero !== numero.replace(".", "").replace("-", "").replace("/", "")) { //while = enquanto
+        numero = numero.replace(".", "").replace("-", "").replace("/", "");
     }
-    while (original !== original.replace("-", "")) { //while = enquanto
-        original = original.replace("-", "");
-    }
-    while (original !== original.replace("/", "")) { //while = enquanto
-        original = original.replace("/", "");
-    }
-    return console.log(original);
+    return console.log(numero);
 }
-
-removerPontuacaoCpfCnpj(cpf);
+removerPontuacao(cpf);
