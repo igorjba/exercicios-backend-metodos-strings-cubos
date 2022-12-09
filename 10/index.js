@@ -1,46 +1,12 @@
 const nomeArquivo = 'Foto da Familia.jpg';
 
-function validacaoDeArquivos(arquivo) {
+function validarArquivo(arquivo) {
+    const extensao = arquivo.slice(arquivo.lastIndexOf("."));
 
-    const tiposDeArquivos = ["jpg", "jpeg", "gif", "png"];
-
-    let indice = arquivo.length - 4;
-
-    let indiceDoPonto = arquivo.indexOf(".", indice);
-
-    let arquivoValido = false;
-
-    if (indiceDoPonto === indice) {
-
-        let tipoDeAquivo = nomeArquivo.slice(indice + 1);
-
-        for (let i = 0; i < tiposDeArquivos.length; i++) {
-
-            if (tipoDeAquivo === tiposDeArquivos[i]) {
-
-                arquivoValido = true;
-
-            } else {
-
-                arquivoValido = false;
-
-            }
-        }
-
+    if (extensao === ".jpg" || extensao === ".jpeg" || extensao === ".git" || extensao === ".png") {
+        console.log("Arquivo válido");
     } else {
-
-        arquivoValido = false;
-
-    }
-    if (arquivoValido === true) {
-
-        return console.log("Arquivo válido");
-
-    } else {
-
-        return console.log("Arquivo inválido");
-
+        console.log("Arquivo inválido");
     }
 }
-
-validacaoDeArquivos(nomeArquivo);
+validarArquivo(nomeArquivo);
